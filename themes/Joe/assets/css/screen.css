@@ -818,7 +818,8 @@ input {
   border: 1px solid #515554;
   color: #515554;
   line-height: 1.5em;
-  padding: .5em;
+  padding: .5em !important;
+  height: auto !important;
   font-size: 1.125em;
   color: #515554;
 }
@@ -5652,4 +5653,48 @@ em {
 }
 .footer-testimonials .testimonial h3 {
   color: white;
+}
+
+.events-table_container {
+  overflow-x: auto;
+  border-left: 1px solid #e9ebeb;
+  border-bottom: 1px solid #e9ebeb;
+  border-right: 1px solid #e9ebeb;
+}
+
+.events-table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+.events-table tr:nth-child(odd) {
+  background: #e9ebeb;
+}
+.events-table tr:nth-child(odd) td {
+  border-right: 1px solid white;
+}
+.events-table tr:nth-child(odd) td:last-child {
+  border-right: 0;
+}
+.events-table tr:nth-child(even) td {
+  border-right: 1px solid #e9ebeb;
+}
+.events-table tr:nth-child(even) td:last-child {
+  border-right: 0;
+}
+.events-table th {
+  font-weight: bold;
+  background: #A30A35;
+  color: white;
+  font-size: 1.25em;
+  border-right: 1px solid white;
+}
+.events-table th:last-child {
+  border-right: 0;
+}
+.events-table td, .events-table th {
+  padding: 10px 5px;
+}
+.events-table a {
+  border-bottom: none;
 }

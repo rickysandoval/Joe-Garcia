@@ -54,7 +54,8 @@ input {
   border: 1px solid $color__black;
   color: $color__black;
   line-height: 1.5em;
-  padding: .5em;
+  padding: .5em !important;
+  height: auto !important;
   font-size: 1.125em;
   color: $color__black;
   &:focus {
