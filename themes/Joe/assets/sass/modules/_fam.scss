@@ -1,0 +1,23 @@
+.fam {
+	width: 100%;
+	float: left;
+	@include bp-at-least(500px){
+		width: 50%;
+		padding: 0 1*$unit;
+	}
+	@include bp-at-least(900px){
+		width: 33%;
+	}
+	img {
+		border-radius: 2px 2px 0 0;
+		border-top: 4px solid $color--redlady;
+		border-bottom: 4px solid $color--redlady;
+	}
+}
+.fam-name {
+	font-size: 1.75em;
+	text-align: center;
+}
+.fam-about {
+	margin-top: .25em;
+}

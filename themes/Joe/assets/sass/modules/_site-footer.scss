@@ -1,0 +1,109 @@
+/**
+
+  @site-footer
+--------------------------------------------------------
+  modules/_site-footer.scss
+--------------------------------------------------------
+
+  The site's global footer
+
+------------------------------------------------------ */
+
+
+.site-footer {
+  padding: 1*$unit 0 0 0;
+  background: $color__black;
+  color: white;
+  margin-top: 3*$unit;
+}
+
+
+// Credits
+.site-credits {
+  display: block;
+  clear: both;
+  background: darken($color__black, 15%);
+  padding-top: $unit;
+  padding-bottom:  $unit;
+  text-align: center;
+  span {
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    border-bottom: none;
+    color: white;
+    &:hover {
+      border-bottom: 1px dotted white;
+      color: white;
+    }
+  }
+  @include bp-at-least(600px){
+    text-align: left;
+    span {
+      float: right;
+    }
+  }
+}
+
+.footer-title {
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  margin-bottom: .5em;
+  font-size: 1.825em;
+}
+
+.footer-contact {
+  font-size: 1.25em;
+  img {
+    border: 1px solid white;
+    max-width: 300px;
+    width: 100%;
+  }
+  p {
+    margin: .5em 0;
+  }
+  a {
+    text-decoration: none;
+    border-bottom: 0;
+    color: white;
+    &:hover {
+      border-bottom: 1px dotted white;
+      color: white;
+    }
+  }
+  margin-bottom: 2*$unit;
+}
+.footer-testimonials {
+  overflow: hidden;
+  .testimonial {
+    display: none;
+    h3 {
+      padding-right: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 450px){
+  .footer-contact {
+    font-size: 1em;
+    img {
+      width: 225px;
+      vertical-align: top;
+    }
+  }
+  .footer-contact_info {
+    display: inline-block;
+    margin-left: $unit;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (min-width: 675px){
+  .footer-contact {
+    float: left;
+    margin-right: 1.75*$unit;
+    img {
+      width: 175px;
+    }
+  }
+}

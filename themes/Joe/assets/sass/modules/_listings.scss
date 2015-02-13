@@ -1,0 +1,122 @@
+.listing-gallery {
+	width: 100%;
+	.slick-thumb {
+		text-align: center;
+		cursor: pointer;
+		img {
+			opacity: .5;
+			transition: .5s;
+		}
+		&:hover img {
+			opacity: 1;
+		}
+	}
+	.slick-thumb p {
+		padding: .5*$unit;
+		margin: $unit .5 * $unit;
+		border: 1px solid $color__grey;
+		background: white;
+		box-shadow: 0px 0px 5px 0px rgba(100,100,100,.25);
+		box-sizing: border-box;
+	}
+	.slick-nav {
+		border-radius: 0 0 2px 2px;
+		background: url('../images/pattern.png');
+		border-left: 1px solid $color__grey;
+		border-right: 1px solid $color__grey;
+		border-bottom: 1px solid $color__grey;
+		box-shadow: 0px 0px 5px 0px rgba(100,100,100,.25);
+	}
+	.slick-main {
+		box-shadow: 0px 5px 5px 0px rgba(100,100,100,.25);
+		border-left: 1px solid $color__grey;
+		border-right: 1px solid $color__grey;
+		border-top: 1px solid $color__grey;
+		border-radius: 2px 2px 0 0;
+		.slick-slide {
+			background: $color__black;
+			img {
+				margin: auto;
+			}
+		}
+	}
+}
+.slick-main_container {
+	position: relative;
+	min-height: 200px;
+}
+.listing-stats {
+	width: 15em;
+	font-size: 1.125em;
+	
+	table {
+		width: 100%;
+	}
+	td:first-child {
+		font-weight: 600;
+	}
+	td:nth-child(2) {
+		padding-left: .5em;
+	}
+}
+.listing-verbage {
+	max-width: 762px;
+	font-size: 1.125em;
+}
+
+.simplegmap {
+	width: 100%;
+	padding-bottom: 75%;
+	@include bp-at-least(600px){
+		padding-bottom: 50%;
+	}
+}
+.gmnoprint img {
+	max-width: none;
+}
+.notice {
+	font-size: .875em;
+	font-style: italic;
+	margin-top: 5*$unit;
+}
+@media screen and (min-width: 800px){
+	.listing-stats {
+		float: right;
+	}
+	.listing-gallery {
+		float: left;
+		padding-right: 19em;
+		margin-right: -19em;
+	}
+}
+
+
+// Filters
+.list-filters {
+	margin: $unit 0 2*$unit 0;
+	button {
+		border-radius: none;
+		font-size: 1.125em;
+		background: white;
+		box-shadow: none;
+		padding: .25em .5em;
+		margin: 0 .5em 0 0;
+		cursor: pointer;
+		border: 1px solid $color__black;
+		transition: .4s;
+
+		&:hover {
+			border: 1px solid $color__redlady;
+			color: $color__redlady;
+		}
+		&.active {
+			background: $color__redlady;
+			color: white;
+			border: 1px solid $color__redlady;
+		}
+	}
+}
+.filter-label {
+	font-size: 1.5em;
+	margin-bottom: .5em;
+}

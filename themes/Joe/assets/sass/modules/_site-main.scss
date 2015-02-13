@@ -1,0 +1,94 @@
+/**
+
+  @site-main
+--------------------------------------------------------
+  modules/_site-main.scss
+--------------------------------------------------------
+
+  The site's main content
+
+------------------------------------------------------ */
+
+.site-main {
+	display: block; // <main> element still needs block declaration
+	@extend .container;
+}
+
+.section-header {
+	margin: 2.5*$unit 0 2*$unit;
+	text-align: center;
+	@include bp-at-least(600px){
+		margin-bottom: 3.5*$unit;
+	}
+}
+.section-header_title {
+	background: $color__redlady;
+	color: white;
+	box-sizing: content-box;
+	padding: 0 1.125*$unit;
+	margin-left: -1.5*$unit;
+	width: 100%;
+	font-size: 2em;
+	box-shadow: 0 0 15px 2px rgba(50,50,50,.25) inset;
+	@include bp-at-least(600px){
+		box-shadow: none;
+		color: $color__black;
+		padding: 0 1em;
+		box-sizing: border-box;
+		margin-left: auto;
+		display: inline-block;
+		width: auto;
+		background: white;
+		transform: translateY(50%);
+
+		&:after, &:before {
+			content: "";
+			display: block;
+			background: $color__redlady;
+			height: 12px;
+			width: 12px;
+			position: absolute;
+			top: 50%;
+			margin-top: 2px;
+		}
+		&:after {
+			right: -2px;
+			transform: translateY(-50%) rotate(45deg);
+		}
+		&:before {
+			left: -2px;
+			transform: translateY(-50%) rotate(45deg);
+		}
+	}
+}
+.section-header_line {
+	display: none;
+	@include bp-at-least(600px){
+		display: block;
+		border-width: 4px;
+		border-color: $color__redlady;
+	}
+}
+.site-intro {
+	@include clearfix;
+	p {
+		line-height: 1.6em;
+	}
+	img {
+		display: block;
+		border-radius: 50%;
+		min-width: 250px;
+		margin-bottom: 1.5*$unit;
+		max-width: 400px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		border: 1px solid $color__grey--light;
+
+		@include bp-at-least(600px){
+			width: 30%;
+			float: left;
+			margin-right: 2*$unit;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+
+.testimonial {
+	blockquote {
+		max-width: 700px;
+		font-size: 1.125em;
+		margin: auto;
+	}
+	h3 {
+		text-align: right;
+		color: $color__redlady;
+		font-size: 1.375em;
+		@include bp-at-least(685px){
+			padding-right: 15%;
+		}
+	}
+}
+.footer-testimonials .testimonial {
+	font-size: .875em;
+	h3 {
+		color: white;
+	}
+}
