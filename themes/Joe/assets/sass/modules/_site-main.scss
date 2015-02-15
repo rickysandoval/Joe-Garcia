@@ -22,15 +22,13 @@
 	}
 }
 .section-header_title {
-	background: $color__redlady;
-	color: white;
-	box-sizing: content-box;
-	padding: 0 1.125*$unit;
-	margin-left: -1.5*$unit;
-	width: 100%;
+	margin-top: 1em;
+	color: $color__black;
+	white-space: nowrap;
 	font-size: 2em;
-	box-shadow: 0 0 15px 2px rgba(50,50,50,.25) inset;
+	border-bottom: 3px solid $color__redlady;
 	@include bp-at-least(600px){
+		border-bottom: none;
 		box-shadow: none;
 		color: $color__black;
 		padding: 0 1em;

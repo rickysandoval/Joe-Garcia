@@ -49,18 +49,14 @@
 .footer-title {
   border-bottom: 1px solid rgba(255,255,255,.5);
   margin-bottom: .5em;
-  font-size: 1.825em;
+  font-size: 2em;
 }
 
 .footer-contact {
-  font-size: 1.25em;
   img {
     border: 1px solid white;
     max-width: 300px;
     width: 100%;
-  }
-  p {
-    margin: .5em 0;
   }
   a {
     text-decoration: none;
@@ -72,6 +68,14 @@
     }
   }
   margin-bottom: 2*$unit;
+}
+.footer-contact_info {
+  h1 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1.125em;
+  }
 }
 .footer-testimonials {
   overflow: hidden;

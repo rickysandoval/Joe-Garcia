@@ -8,6 +8,7 @@
 	border-spacing: 0;
 	border-collapse: collapse;
 	min-width: 650px;
+	width: 100%;
 	tr:nth-child(odd){
 		background: lighten($color__grey--light, 10%);
 		td {

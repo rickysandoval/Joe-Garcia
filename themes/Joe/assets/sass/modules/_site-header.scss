@@ -11,14 +11,15 @@
 
 .site-header {
   @include clearfix();
-  padding: .75*$unit 0 0 0;
   background: url('../images/pattern.png');
   border-top: 2px solid $color__redlady;
   a {
     border-bottom: none;
   }
 }
-
+.site-header_overlay {
+  background: rgba(255,255,255,.25);
+}
 
 
 
@@ -42,6 +43,12 @@
   display: block;
   text-align: left;
   position: relative;
+  padding-top: .75*$unit;
+  padding-bottom: .75*$unit;
+  @include bp-at-least (1120px){
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .branding-corporate, .branding-personal {
   max-height: 4.5em;
@@ -111,11 +118,18 @@
 .site-header nav {
   border-top: 1px solid $color__grey--light;
   border-bottom: 1px solid $color__grey--light;
-  box-shadow: 0px 0px 10px -5px rgba(150, 150, 150, 0.5) inset;  background: white;
+  background: white;
+}
+.no-touch .site-nav .nav>li:hover ul {
+  opacity: 1;
+  z-index: 1000;
 }
 .site-nav {
   display: none;
   text-align: right;
+  @include bp-at-least(600px){
+    display: block;
+  }
   ul {
     list-style-type: none;
     ul {
@@ -124,14 +138,14 @@
       top: 100%;
       width: 100%;
       opacity: 0;
-      background: rgba(255,255,255,.85);
+      background: white;
       border-left: 1px solid $color__grey--light;
       border-right: 1px solid $color__grey--light;
       border-bottom: 3px solid $color__redlady;
       border-radius: 0 0 2px 2px;
       a {
         &:hover {
-          background: white;
+          background: lighten($color__grey--light, 15%);
         }
       }
     }
@@ -148,10 +162,10 @@
     float: left;
     text-align: center;
     position: relative;
-    &:hover {
+    &.on {
       ul {
-        z-index: 1000;
         opacity: 1;
+        z-index: 1000;
       }
     }
     a {
@@ -162,7 +176,7 @@
       text-transform: uppercase;
       color: $color__black;
     }
-    > a {
+    > a:not(.sub-open) {
       border-top: 3px solid rgba(150,150,150,0);
       &:hover, &.nav-path-selected {
         border-top: 3px solid $color__redlady;
@@ -186,9 +200,6 @@
       display: none;
     }
   }
-  @include bp-at-least(500px){
-    display: block;
-  }
 }
 
 @media screen and (max-width: 730px){
@@ -196,18 +207,49 @@
     text-align: middle;
   }
 }
+
+.sub-open {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  height: 1.5em;
+  width: 1.5em;
+  z-index: 100;
+  cursor: pointer;
+  padding: 0 !important;
+ 
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid $color__redlady !important;
+    z-index: 0;
+  }
+}
  
 .mobile-nav {
   background: $color__redlady;
   box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5) inset, 0px -10px 10px -10px rgba(0, 0, 0, 0.25) inset;
   @include clearfix;
-  @include bp-at-least(500px){
+  @include bp-at-least(600px){
     display: none;
+  }
+  .sub-open {
+    right: 20%;
   }
   font-size: 1.125em;
   .nav {
     padding-bottom: 0;
     transition: .5s;
+    > li a {
+      border: 0;
+    }
   }
   ul {
     list-style: none;
@@ -235,28 +277,6 @@
       text-decoration: none;
       text-transform: uppercase;
       color: $color__black;
-    }
-    .sub-open {
-      position: absolute;
-      top: 1em;
-      right: 20%;
-      height: 1.5em;
-      width: 1.5em;
-      z-index: 100;
-      cursor: pointer;
-      &:after {
-        content: "";
-        display: block;
-        height: 0;
-        width: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-top: 10px solid $color__redlady !important;
-        z-index: 0;
-      }
     }
   }
   &.shown {

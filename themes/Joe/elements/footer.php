@@ -1,13 +1,13 @@
 	<footer class="site-footer">
 		<div class="container">
 			<div class="footer-contact">
-			<h2 class="footer-title">Contact</h2>
+			<h1 class="footer-title">Contact</h1>
 				<?
 					$a = new GlobalArea('Footer Contact Photo');
 					$a->display($c);
 				?>
 				<div class="footer-contact_info">
-					<h3>Joe Garcia | Realtor</h3>
+					<h1>Joe Garcia | Realtor</h1>
 					<p>215 Elk Avenue,<br>Crested Butte, CO</p>
 					<p>Cell: <a href="tel:9702094034">970-209-4034</a></p>
 					<p><a href="mailto:joe@redladyrealty.com">joe@redladyrealty.com</a></p>
@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="footer-testimonials">
-			<h2 class="footer-title">Testimonials</h2>
+			<h1 class="footer-title">Testimonials</h1>
 				<div class="testimonial-list">
 					<?
 						$a = new GlobalArea('Testimonials');
@@ -27,7 +27,7 @@
 		<div class="site-credits">
 			<div class="container">
 			&copy; <?php echo date("Y") ?> Red Lady Realty
-			<span>Website by <a href="rickysandoval.me">Ricky Sandoval</a></span>
+			<span><a href="<? echo BASE_URL?>/index.php/login">Admin Login</a> | Website by <a href="rickysandoval.me">Ricky Sandoval</a></span>
 			</div>
 		</div>
 	</footer>

@@ -22,7 +22,6 @@
 }
 .listing-thumb_container {
 	position: relative;
-	border: 1px solid $color__grey;
 	width: 100%;
 	height: 0;
 	padding-bottom: 55%;
@@ -42,8 +41,12 @@
 	padding: .1em .5em;
 	box-shadow: 0 0 6px 2px rgba(0,0,0,.25);
 	border-top: 3px solid $color__redlady;
+	border-left: 1px solid $color__grey--light;
 	color: $color__redlady;
 	transition: .5s;
+}
+.sold .listing-price {
+	
 }
 .listing-name {
 	font-size: 1.4em;
@@ -54,7 +57,9 @@
 	position: relative;
 }
 .listing-info_top, .listing-info_bottom {
-	border: 1px solid $color__grey--light;
+	border-right: 1px solid $color__grey--light;
+	border-left: 1px solid $color__grey--light;
+	border-bottom: 1px solid $color__grey--light;
 	padding: 1em;
 	h4 span {
 		float: right;
@@ -79,4 +84,34 @@
 
 .mix {
 	display: none;
+}
+
+// Filters
+.list-filters {
+	margin: $unit 0 2*$unit 0;
+	button {
+		border-radius: none;
+		font-size: 1.125em;
+		background: white;
+		box-shadow: none;
+		padding: .25em .5em;
+		margin: 0 .5em 0 0;
+		cursor: pointer;
+		border: 1px solid $color__black;
+		transition: .4s;
+
+		&:hover {
+			border: 1px solid $color__redlady;
+			color: $color__redlady;
+		}
+		&.active {
+			background: $color__redlady;
+			color: white;
+			border: 1px solid $color__redlady;
+		}
+	}
+}
+.filter-label {
+	font-size: 1.5em;
+	margin-bottom: .5em;
 }

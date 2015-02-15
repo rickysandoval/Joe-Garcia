@@ -31,44 +31,47 @@
 .slick-next, .slick-prev {
 	position: absolute;
 	top: 50%;
-	width: 3*$unit;
-	height: 3*$unit;
-	background: rgba(255,255,255,.5);
+	width: 4*$unit;
+	height: 4*$unit;
+	background: rgba(255,255,255,.75);
 	border-radius: 50%;
-	border: 1px solid $color__black;
+	border: 1px solid $color__grey;
 	z-index: 1000;
 	transform: translateY(-50%);
 	cursor: pointer;
+	transition: .2s;
 	&:before {
 		content: "";
 		display: block;
 		position: absolute;
-		width: 30%;
-		height: 30%;
+		width: 25%;
+		height: 25%;
 		top: 50%;
 		border-color: inherit;
 	}
 	&:hover {
-		background: rgba(255,255,255,.75);
+		background: rgba(255,255,255,.9);
 		border-color: $color__redlady;
 
 	}
 }
 .slick-next {
-	right: .5*$unit;
+	right: -2*$unit;
 	&:before {
 		border-right: 1px solid;
 		border-top: 1px solid;
 		right: 50%;
-		transform: translateX(30%) translateY(-50%) rotate(45deg);
+		transform: translateX(-50%) translateY(-50%) rotate(45deg);
+		border-color: inherit;
 	}
 }
 .slick-prev{
-	left: .5*$unit;
+	left: -2*$unit;
 	&:before {
 		border-left: 1px solid;
 		border-bottom: 1px solid;
 		left: 50%;
-		transform: translateX(-30%) translateY(-50%) rotate(45deg);
+		transform: translateX(50%) translateY(-50%) rotate(45deg);
+		border-color: inherit;
 	}
 }

@@ -1,4 +1,10 @@
 $(document).ready(function(){
+	if (("ontouchstart" in document.documentElement)){
+		document.documentElement.className += " touch-enabled";
+	} else {
+		document.documentElement.className += " no-touch";
+	}
+
 	$('.hamburger').on('click', function(){
 		$(this).toggleClass('open');
 		$('.mobile-nav').toggleClass('shown');
@@ -12,6 +18,16 @@ $(document).ready(function(){
 		window.location = url;
 	});
 	$('.mobile-nav .parent > a').on('click', function(){
+		$(this).parent().toggleClass('on');
+		return false;
+	});
+	$('.touch-enabled .site-nav .nav > li').has('ul').prepend('<a class="sub-open"></a>').addClass('parent');
+
+	$('.touch-enabled .site-nav .parent > a:not(.sub-open)').dblclick(function(){
+		var url = $(this).attr('href');
+		window.location = url;
+	});
+	$('.touch-enabled .site-nav .parent > a').on('click', function(){
 		$(this).parent().toggleClass('on');
 		return false;
 	});

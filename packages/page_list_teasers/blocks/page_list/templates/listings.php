@@ -48,9 +48,15 @@ foreach ($pages as $page) {
 			<?php
 				$img = $page->getAttribute('page_thumb');
 				$thumb = $ih->getThumbnail($img, 9999, 600, false);
-			?>	<div class="listing-thumb_container <?php echo $portrait; ?>">
+			?>	<div class="listing-thumb_container <?php echo $portrait; ?> <? if($page->getAttribute('is_sold')){ echo 'sold'; }?>">
 					<img class="listing-thumb" src="<?php echo $thumb->src; ?>" width="<?php  echo $thumb->width ?>" height="<?php  echo $thumb->height ?>" alt="<?php  echo $title; ?>" />
-					<p class="listing-price"><? setlocale(LC_MONETARY, 'en_US'); echo money_format('%(#15.0n', $page->getAttribute('list_price')); ?></p>
+					<p class="listing-price"><? 
+					if(!$page->getAttribute('is_sold')){
+						setlocale(LC_MONETARY, 'en_US'); echo money_format('%(#15.0n', $page->getAttribute('list_price')); 
+					} else {
+						echo 'SOLD';
+					}
+					?></p>
 				</div>
 				<h3 class="listing-name"><?echo $title?></h3>
 				<div class="listing-info_top">
