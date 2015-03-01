@@ -32,10 +32,12 @@ $container__max-width: 70em; // restricts width
   padding: 0 1.5*$unit;
 }
 .anti-contained {
-  box-sizing: content-box;
-  width: auto;
-  margin-right: -1.5*$unit;
-  margin-left: -1.5*$unit;
+  @include bp-until(1081px){
+    box-sizing: content-box;
+    width: auto;
+    margin-right: -1.5*$unit;
+    margin-left: -1.5*$unit;
+  }
 }
 
 .no-padding {

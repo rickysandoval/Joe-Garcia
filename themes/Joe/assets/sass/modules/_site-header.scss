@@ -44,7 +44,6 @@
   text-align: left;
   position: relative;
   padding-top: .75*$unit;
-  padding-bottom: .75*$unit;
   @include bp-at-least (1120px){
     padding-left: 0;
     padding-right: 0;
