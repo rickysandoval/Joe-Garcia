@@ -371,6 +371,7 @@ body {
   background: #fff;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 /**
@@ -1126,6 +1127,7 @@ hr {
 ------------------------------------------------------ */
 html {
   font-size: 80%;
+  height: 100%;
 }
 @media (min-width: 20em) {
   html {
@@ -4446,6 +4448,10 @@ em {
   this case, we call that .site.
 
 ------------------------------------------------------ */
+.site {
+  min-height: 100%;
+}
+
 /**
 
   @site-header

@@ -34,15 +34,13 @@
 			<tr><h1 class="listing-stats_title">Property Stats</h1></tr>
 			<?php
 
-				$i = 1;
 				foreach($attr_keys as $ak) { 
 					if ($c->getAttribute($ak->akHandle)){
 					?>
 						<tr><td><? echo $ak->akName;?></td>
 						<td><?
-						if($i == 1){
+						if($ak->akName == "List Price"){
 							setlocale(LC_MONETARY, 'en_US'); echo money_format('%(#15.0n', $c->getAttribute($ak->akHandle));
-							$i++;
 						} else {
 							if(strcmp($ak->akHandle, 'property_type') == 0){
 								echo '<a href="..?city=' . urlencode($c->getAttribute($ak->akHandle)) . '" >' . $c->getAttribute($ak->akHandle) . '</a>';
@@ -111,15 +109,14 @@
 			<tr><h1 class="listing-stats_title">Property Stats</h1></tr>
 			<?php
 
-				$i = 1;
+				
 				foreach($attr_keys as $ak) { 
 					if ($c->getAttribute($ak->akHandle)){
 					?>
 						<tr><td><? echo $ak->akName;?></td>
 						<td><?
-						if($i == 1){
+						if($ak->akName == "List Price"){
 							setlocale(LC_MONETARY, 'en_US'); echo money_format('%(#15.0n', $c->getAttribute($ak->akHandle));
-							$i++;
 						} else {
 							echo $c->getAttribute($ak->akHandle); 
 						}
@@ -142,15 +139,17 @@
 <?php } ?>
 		<script>
 			$(document).ready(function(){
-				$('#gmap').simplegmaps({
-					MapOptions: {
-						scrollwheel: false,
-						zoomControl: true,
-						zoomControlOptions: {
-							style: 'DEFAULT'
+				if($('#gmap').length > 0 ){
+					$('#gmap').simplegmaps({
+						MapOptions: {
+							scrollwheel: false,
+							zoomControl: true,
+							zoomControlOptions: {
+								style: 'DEFAULT'
+							}
 						}
-					}
-				});
+					});
+				}
 			});
 		</script>
 	</main>

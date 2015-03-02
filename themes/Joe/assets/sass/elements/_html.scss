@@ -16,6 +16,7 @@ html {
   // changes the base fontsize.
   font-size: 80%;
   @include gradual-queries(20em, 90%, 80em, 100%, 10em);
+  height: 100%;
 }
 
 * {
